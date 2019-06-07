@@ -1,0 +1,50 @@
+﻿@model SiyayaTravelAssist.Models.Quote
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Quote</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuoteStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuoteStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client.ClientReference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client.ClientReference)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.QuoteID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

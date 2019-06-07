@@ -1,0 +1,75 @@
+﻿@model IEnumerable<SiyayaTravelAssist.Models.Driver>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LicenseNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LicenseExpiryDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutsourceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutsourceNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutsourseIdentityNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DriverType.DriverTypeDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LicenseType.LicenseTypeDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LicenseNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LicenseExpiryDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutsourceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutsourceNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutsourseIdentityNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DriverType.DriverTypeDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LicenseType.LicenseTypeDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DriverID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DriverID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DriverID })
+        </td>
+    </tr>
+}
+
+</table>

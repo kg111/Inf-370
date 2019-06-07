@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SiyayaTravelAssistModelStoreContainer" CdmEntityContainer="SiyayaTravelAssistEntities">
+    <EntitySetMapping Name="AccessLevels">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.AccessLevel">
+        <MappingFragment StoreEntitySet="AccessLevel">
+          <ScalarProperty Name="AccessLevelDescription" ColumnName="AccessLevelDescription" />
+          <ScalarProperty Name="AccessLevelID" ColumnName="AccessLevelID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditTrails">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.AuditTrail">
+        <MappingFragment StoreEntitySet="AuditTrail">
+          <ScalarProperty Name="AuditTrailTime" ColumnName="AuditTrailTime" />
+          <ScalarProperty Name="AuditTrailDate" ColumnName="AuditTrailDate" />
+          <ScalarProperty Name="AuditTrailID" ColumnName="AuditTrailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bookings">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.Booking">
+        <MappingFragment StoreEntitySet="Booking">
+          <ScalarProperty Name="BookingTypeID" ColumnName="BookingTypeID" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="AdditionalInformation" ColumnName="AdditionalInformation" />
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+          <ScalarProperty Name="numberOfPassengers" ColumnName="numberOfPassengers" />
+          <ScalarProperty Name="BookingOrder" ColumnName="BookingOrder" />
+          <ScalarProperty Name="BookingReference" ColumnName="BookingReference" />
+          <ScalarProperty Name="BookingStatus" ColumnName="BookingStatus" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="BookingID" ColumnName="BookingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BookingTypes">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.BookingType">
+        <MappingFragment StoreEntitySet="BookingType">
+          <ScalarProperty Name="BookingTypeDescription" ColumnName="BookingTypeDescription" />
+          <ScalarProperty Name="BookingTypeID" ColumnName="BookingTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityDescription" ColumnName="CityDescription" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="PhysicalAddress" ColumnName="PhysicalAddress" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+          <ScalarProperty Name="ClientReference" ColumnName="ClientReference" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CountryDescription" ColumnName="CountryDescription" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drivers">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.Driver">
+        <MappingFragment StoreEntitySet="Driver">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="DriverTypeID" ColumnName="DriverTypeID" />
+          <ScalarProperty Name="LicenseTypeID" ColumnName="LicenseTypeID" />
+          <ScalarProperty Name="OutsourseIdentityNumber" ColumnName="OutsourseIdentityNumber" />
+          <ScalarProperty Name="OutsourceNumber" ColumnName="OutsourceNumber" />
+          <ScalarProperty Name="OutsourceName" ColumnName="OutsourceName" />
+          <ScalarProperty Name="LicenseExpiryDate" ColumnName="LicenseExpiryDate" />
+          <ScalarProperty Name="LicenseNumber" ColumnName="LicenseNumber" />
+          <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DriverTypes">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.DriverType">
+        <MappingFragment StoreEntitySet="DriverType">
+          <ScalarProperty Name="DriverTypeDescription" ColumnName="DriverTypeDescription" />
+          <ScalarProperty Name="DriverTypeID" ColumnName="DriverTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="NationalityID" ColumnName="NationalityID" />
+          <ScalarProperty Name="AccessLevelID" ColumnName="AccessLevelID" />
+          <ScalarProperty Name="AuditTrailID" ColumnName="AuditTrailID" />
+          <ScalarProperty Name="SuburbID" ColumnName="SuburbID" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="TitleID" ColumnName="TitleID" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="EmployeeTypeID" ColumnName="EmployeeTypeID" />
+          <ScalarProperty Name="IsEmailVerified" ColumnName="IsEmailVerified" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeTypes">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.EmployeeType">
+        <MappingFragment StoreEntitySet="EmployeeType">
+          <ScalarProperty Name="EmployeeTypeDescription" ColumnName="EmployeeTypeDescription" />
+          <ScalarProperty Name="EmployeeTypeID" ColumnName="EmployeeTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genders">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="GenderDescription" ColumnName="GenderDescription" />
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicenseTypes">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.LicenseType">
+        <MappingFragment StoreEntitySet="LicenseType">
+          <ScalarProperty Name="LicenseTypeDescription" ColumnName="LicenseTypeDescription" />
+          <ScalarProperty Name="LicenseTypeID" ColumnName="LicenseTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="LocationDescription" ColumnName="LocationDescription" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nationalities">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.Nationality">
+        <MappingFragment StoreEntitySet="Nationality">
+          <ScalarProperty Name="NationalityDescription" ColumnName="NationalityDescription" />
+          <ScalarProperty Name="NationalityID" ColumnName="NationalityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OutsourceVehicleGroupCompanies">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.OutsourceVehicleGroupCompany">
+        <MappingFragment StoreEntitySet="OutsourceVehicleGroupCompanies">
+          <ScalarProperty Name="OutsourceVehicleGroupCompaniesDescription" ColumnName="OutsourceVehicleGroupCompaniesDescription" />
+          <ScalarProperty Name="OutsourceVehicleGroupCompaniesID" ColumnName="OutsourceVehicleGroupCompaniesID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Passengers">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.Passenger">
+        <MappingFragment StoreEntitySet="Passenger">
+          <ScalarProperty Name="PassengerDescription" ColumnName="PassengerDescription" />
+          <ScalarProperty Name="PassengerID" ColumnName="PassengerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provinces">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.Province">
+        <MappingFragment StoreEntitySet="Province">
+          <ScalarProperty Name="ProvinceDescription" ColumnName="ProvinceDescription" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quotes">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.Quote">
+        <MappingFragment StoreEntitySet="Quote">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="QuoteStatus" ColumnName="QuoteStatus" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceProviders">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.ServiceProvider">
+        <MappingFragment StoreEntitySet="ServiceProvider">
+          <ScalarProperty Name="PhysicalAddress" ColumnName="PhysicalAddress" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="ServiceProviderName" ColumnName="ServiceProviderName" />
+          <ScalarProperty Name="ServiceProviderID" ColumnName="ServiceProviderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suburbs">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.Suburb">
+        <MappingFragment StoreEntitySet="Suburb">
+          <ScalarProperty Name="SuburbDescription" ColumnName="SuburbDescription" />
+          <ScalarProperty Name="SuburbID" ColumnName="SuburbID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Titles">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.Title">
+        <MappingFragment StoreEntitySet="Title">
+          <ScalarProperty Name="TitleDescription" ColumnName="TitleDescription" />
+          <ScalarProperty Name="TitleID" ColumnName="TitleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trips">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.Trip">
+        <MappingFragment StoreEntitySet="Trip">
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="DropOffLocation" ColumnName="DropOffLocation" />
+          <ScalarProperty Name="PickupLocation" ColumnName="PickupLocation" />
+          <ScalarProperty Name="PassengerID" ColumnName="PassengerID" />
+          <ScalarProperty Name="TripDate" ColumnName="TripDate" />
+          <ScalarProperty Name="DropOffTime" ColumnName="DropOffTime" />
+          <ScalarProperty Name="PickupTime" ColumnName="PickupTime" />
+          <ScalarProperty Name="TripID" ColumnName="TripID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicles">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.Vehicle">
+        <MappingFragment StoreEntitySet="Vehicle">
+          <ScalarProperty Name="OutsourceVehicleGroupCompaniesID" ColumnName="OutsourceVehicleGroupCompaniesID" />
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="VehicleGroupID" ColumnName="VehicleGroupID" />
+          <ScalarProperty Name="VehicleColorID" ColumnName="VehicleColorID" />
+          <ScalarProperty Name="VehicleBrandTypeID" ColumnName="VehicleBrandTypeID" />
+          <ScalarProperty Name="VehicleLicenseNumber" ColumnName="VehicleLicenseNumber" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleBrandTypes">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.VehicleBrandType">
+        <MappingFragment StoreEntitySet="VehicleBrandType">
+          <ScalarProperty Name="VehicleModelTypeID" ColumnName="VehicleModelTypeID" />
+          <ScalarProperty Name="VehicleBrandTypeDescription" ColumnName="VehicleBrandTypeDescription" />
+          <ScalarProperty Name="VehicleBrandTypeID" ColumnName="VehicleBrandTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleColors">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.VehicleColor">
+        <MappingFragment StoreEntitySet="VehicleColor">
+          <ScalarProperty Name="VehicleColorDescription" ColumnName="VehicleColorDescription" />
+          <ScalarProperty Name="VehicleColorID" ColumnName="VehicleColorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleGroups">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.VehicleGroup">
+        <MappingFragment StoreEntitySet="VehicleGroup">
+          <ScalarProperty Name="VehicleGroupDescription" ColumnName="VehicleGroupDescription" />
+          <ScalarProperty Name="VehicleGroupID" ColumnName="VehicleGroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleMaintenances">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.VehicleMaintenance">
+        <MappingFragment StoreEntitySet="VehicleMaintenance">
+          <ScalarProperty Name="ServiceProviderID" ColumnName="ServiceProviderID" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="MaintenanceDate" ColumnName="MaintenanceDate" />
+          <ScalarProperty Name="MaintenanceStatus" ColumnName="MaintenanceStatus" />
+          <ScalarProperty Name="KmToMaintenance" ColumnName="KmToMaintenance" />
+          <ScalarProperty Name="VehicleMaintenanceID" ColumnName="VehicleMaintenanceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleModelTypes">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.VehicleModelType">
+        <MappingFragment StoreEntitySet="VehicleModelType">
+          <ScalarProperty Name="VehicleModelTypeDescription" ColumnName="VehicleModelTypeDescription" />
+          <ScalarProperty Name="VehicleModelTypeID" ColumnName="VehicleModelTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleTypes">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.VehicleType">
+        <MappingFragment StoreEntitySet="VehicleType">
+          <ScalarProperty Name="VehicleTypeDescription" ColumnName="VehicleTypeDescription" />
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZoneRates">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.ZoneRate">
+        <MappingFragment StoreEntitySet="ZoneRate">
+          <ScalarProperty Name="ZoneRateDescription" ColumnName="ZoneRateDescription" />
+          <ScalarProperty Name="ZoneRateID" ColumnName="ZoneRateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reports">
+      <EntityTypeMapping TypeName="SiyayaTravelAssistModel.Report">
+        <MappingFragment StoreEntitySet="Report">
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

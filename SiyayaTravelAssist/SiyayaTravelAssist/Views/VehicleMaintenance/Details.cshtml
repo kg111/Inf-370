@@ -1,0 +1,58 @@
+﻿@model SiyayaTravelAssist.Models.VehicleMaintenance
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VehicleMaintenance</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KmToMaintenance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KmToMaintenance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaintenanceStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaintenanceStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaintenanceDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaintenanceDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceProvider.ServiceProviderName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceProvider.ServiceProviderName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.VehicleLicenseNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.VehicleLicenseNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VehicleMaintenanceID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

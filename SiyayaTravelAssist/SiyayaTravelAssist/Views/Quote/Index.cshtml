@@ -1,0 +1,52 @@
+﻿@model IEnumerable<SiyayaTravelAssist.Models.Quote>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuoteStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Client.ClientReference)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateCreated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuoteStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.ClientReference)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.QuoteID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.QuoteID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.QuoteID })
+        </td>
+    </tr>
+}
+
+</table>

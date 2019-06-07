@@ -1,0 +1,64 @@
+﻿@model SiyayaTravelAssist.Models.VehicleMaintenance
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>VehicleMaintenance</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KmToMaintenance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KmToMaintenance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaintenanceStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaintenanceStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaintenanceDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaintenanceDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceProvider.ServiceProviderName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceProvider.ServiceProviderName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.VehicleLicenseNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.VehicleLicenseNumber)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

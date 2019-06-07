@@ -1,0 +1,82 @@
+﻿@model SiyayaTravelAssist.Models.Trip
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Trip</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PickupTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PickupTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DropOffTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DropOffTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TripDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TripDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Distance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Distance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.LocationDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.LocationDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location1.LocationDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location1.LocationDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger.PassengerDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passenger.PassengerDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote.QuoteID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote.QuoteID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TripID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

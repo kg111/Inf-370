@@ -1,0 +1,160 @@
+﻿@model SiyayaTravelAssist.Models.Employee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsEmailVerified)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsEmailVerified)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccessLevel.AccessLevelDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccessLevel.AccessLevelDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuditTrail.AuditTrailID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuditTrail.AuditTrailID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country.CountryDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country.CountryDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeType.EmployeeTypeDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeType.EmployeeTypeDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nationality.NationalityDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nationality.NationalityDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Province.ProvinceDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Province.ProvinceDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Suburb.SuburbDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Suburb.SuburbDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title.TitleDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title.TitleDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City.CityDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City.CityDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender1.GenderDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender1.GenderDescription)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

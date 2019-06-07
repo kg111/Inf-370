@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0f8af3ea985d4f45a79ac4f86daae63a" Name="Diagram1" ZoomLevel="61" >
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.AccessLevel" Width="1.5" PointX="0.75" PointY="11.125" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.AuditTrail" Width="1.5" PointX="0.75" PointY="20.5" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.Booking" Width="1.5" PointX="17.25" PointY="1" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.BookingType" Width="1.5" PointX="15" PointY="5.875" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.City" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.Client" Width="1.5" PointX="12.75" PointY="1.5" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.Country" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.Driver" Width="1.5" PointX="5.25" PointY="2.375" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.DriverType" Width="1.5" PointX="3" PointY="11.375" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.Employee" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.EmployeeType" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.Gender" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.LicenseType" Width="1.5" PointX="3" PointY="8" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.Location" Width="1.5" PointX="10.75" PointY="12.5" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.Nationality" Width="1.5" PointX="0.75" PointY="6.375" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.OutsourceVehicleGroupCompany" Width="1.5" PointX="8" PointY="15.5" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.Passenger" Width="1.5" PointX="10.75" PointY="15.625" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.Province" Width="1.5" PointX="0.75" PointY="18.125" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.Quote" Width="1.5" PointX="15" PointY="1.5" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.ServiceProvider" Width="1.5" PointX="10.25" PointY="3.625" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.Suburb" Width="1.5" PointX="0.75" PointY="13.375" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.Title" Width="1.5" PointX="0.75" PointY="3.25" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.Trip" Width="1.5" PointX="13" PointY="12" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.Vehicle" Width="1.5" PointX="10.25" PointY="7" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.VehicleBrandType" Width="1.5" PointX="8" PointY="7.75" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.VehicleColor" Width="1.5" PointX="8" PointY="10.75" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.VehicleGroup" Width="1.5" PointX="8" PointY="13.125" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.VehicleMaintenance" Width="1.5" PointX="12.5" PointY="7.5" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.VehicleModelType" Width="1.5" PointX="5.75" PointY="8" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.VehicleType" Width="1.5" PointX="8" PointY="4.5" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.ZoneRate" Width="1.5" PointX="2.75" PointY="14.75" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Employee__Access__619B8048" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Employee__AuditT__60A75C0F" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Booking__Booking__208CD6FA" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Booking__QuoteID__1F98B2C1" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Quote__ClientID__1AD3FDA4" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Employee__Countr__5CD6CB2B" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Driver__DriverTy__6D0D32F4" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Driver__Employee__6E01572D" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Driver__LicenseT__6C190EBB" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Employee__Employ__5BE2A6F2" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Employee__Nation__628FA481" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Employee__Provin__5EBF139D" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Employee__Suburb__5FB337D6" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Employee__TitleI__5DCAEF64" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Trip__DropOffLoc__29221CFB" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Trip__PickupLoca__282DF8C2" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Vehicle__Outsour__10566F31" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Trip__PassengerI__2739D489" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__VehicleMa__Servi__160F4887" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Vehicle__Vehicle__0C85DE4D" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Vehicle__Vehicle__0D7A0286" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Vehicle__Vehicle__0E6E26BF" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Vehicle__Vehicle__0F624AF8" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__VehicleMa__Vehic__151B244E" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__VehicleBr__Vehic__74AE54BC" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Employee__CityID__52593CB8" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Employee__Gender__534D60F1" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Trip__QuoteID__0A9D95DB" />
+        <EntityTypeShape EntityType="SiyayaTravelAssistModel.Report" Width="1.5" PointX="17.25" PointY="5.125" />
+        <AssociationConnector Association="SiyayaTravelAssistModel.FK__Report__QuoteID__160F4887" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,784 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SiyayaTravelAssistModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccessLevel">
+    <Key>
+      <PropertyRef Name="AccessLevelID" />
+    </Key>
+    <Property Name="AccessLevelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccessLevelDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AuditTrail">
+    <Key>
+      <PropertyRef Name="AuditTrailID" />
+    </Key>
+    <Property Name="AuditTrailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AuditTrailDate" Type="datetime" />
+    <Property Name="AuditTrailTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="BookingID" />
+    </Key>
+    <Property Name="BookingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="BookingStatus" Type="varchar" MaxLength="50" />
+    <Property Name="BookingReference" Type="varchar" MaxLength="50" />
+    <Property Name="BookingOrder" Type="varchar" MaxLength="50" />
+    <Property Name="numberOfPassengers" Type="int" />
+    <Property Name="PaymentStatus" Type="varchar" MaxLength="50" />
+    <Property Name="AdditionalInformation" Type="varchar" MaxLength="100" />
+    <Property Name="QuoteID" Type="int" />
+    <Property Name="BookingTypeID" Type="int" />
+  </EntityType>
+  <EntityType Name="BookingType">
+    <Key>
+      <PropertyRef Name="BookingTypeID" />
+    </Key>
+    <Property Name="BookingTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookingTypeDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientReference" Type="varchar" MaxLength="50" />
+    <Property Name="ClientName" Type="varchar" MaxLength="50" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
+    <Property Name="PhysicalAddress" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Driver">
+    <Key>
+      <PropertyRef Name="DriverID" />
+    </Key>
+    <Property Name="DriverID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LicenseNumber" Type="varchar" MaxLength="50" />
+    <Property Name="LicenseExpiryDate" Type="datetime" />
+    <Property Name="OutsourceName" Type="varchar" MaxLength="50" />
+    <Property Name="OutsourceNumber" Type="varchar" MaxLength="50" />
+    <Property Name="OutsourseIdentityNumber" Type="varchar" MaxLength="50" />
+    <Property Name="LicenseTypeID" Type="int" />
+    <Property Name="DriverTypeID" Type="int" />
+    <Property Name="EmployeeID" Type="int" />
+  </EntityType>
+  <EntityType Name="DriverType">
+    <Key>
+      <PropertyRef Name="DriverTypeID" />
+    </Key>
+    <Property Name="DriverTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DriverTypeDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="254" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="IsEmailVerified" Type="bit" />
+    <Property Name="EmployeeTypeID" Type="int" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="TitleID" Type="int" />
+    <Property Name="ProvinceID" Type="int" />
+    <Property Name="SuburbID" Type="int" />
+    <Property Name="AuditTrailID" Type="int" />
+    <Property Name="AccessLevelID" Type="int" />
+    <Property Name="NationalityID" Type="int" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="Gender" Type="int" />
+  </EntityType>
+  <EntityType Name="EmployeeType">
+    <Key>
+      <PropertyRef Name="EmployeeTypeID" />
+    </Key>
+    <Property Name="EmployeeTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeTypeDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenderDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LicenseType">
+    <Key>
+      <PropertyRef Name="LicenseTypeID" />
+    </Key>
+    <Property Name="LicenseTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LicenseTypeDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Nationality">
+    <Key>
+      <PropertyRef Name="NationalityID" />
+    </Key>
+    <Property Name="NationalityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NationalityDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OutsourceVehicleGroupCompanies">
+    <Key>
+      <PropertyRef Name="OutsourceVehicleGroupCompaniesID" />
+    </Key>
+    <Property Name="OutsourceVehicleGroupCompaniesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OutsourceVehicleGroupCompaniesDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Passenger">
+    <Key>
+      <PropertyRef Name="PassengerID" />
+    </Key>
+    <Property Name="PassengerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PassengerDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProvinceDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Quote">
+    <Key>
+      <PropertyRef Name="QuoteID" />
+    </Key>
+    <Property Name="QuoteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="Price" Type="real" />
+    <Property Name="QuoteStatus" Type="bit" />
+    <Property Name="ClientID" Type="int" />
+  </EntityType>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="ReportID" />
+    </Key>
+    <Property Name="ReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuoteID" Type="int" />
+  </EntityType>
+  <EntityType Name="ServiceProvider">
+    <Key>
+      <PropertyRef Name="ServiceProviderID" />
+    </Key>
+    <Property Name="ServiceProviderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceProviderName" Type="varchar" MaxLength="50" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
+    <Property Name="PhysicalAddress" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Suburb">
+    <Key>
+      <PropertyRef Name="SuburbID" />
+    </Key>
+    <Property Name="SuburbID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SuburbDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Title">
+    <Key>
+      <PropertyRef Name="TitleID" />
+    </Key>
+    <Property Name="TitleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TitleDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Trip">
+    <Key>
+      <PropertyRef Name="TripID" />
+    </Key>
+    <Property Name="TripID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PickupTime" Type="datetime" />
+    <Property Name="DropOffTime" Type="datetime" />
+    <Property Name="TripDate" Type="datetime" />
+    <Property Name="PassengerID" Type="int" />
+    <Property Name="PickupLocation" Type="int" />
+    <Property Name="DropOffLocation" Type="int" />
+    <Property Name="Distance" Type="varchar" MaxLength="50" />
+    <Property Name="QuoteID" Type="int" />
+  </EntityType>
+  <EntityType Name="Vehicle">
+    <Key>
+      <PropertyRef Name="VehicleID" />
+    </Key>
+    <Property Name="VehicleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VehicleLicenseNumber" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleBrandTypeID" Type="int" />
+    <Property Name="VehicleColorID" Type="int" />
+    <Property Name="VehicleGroupID" Type="int" />
+    <Property Name="VehicleTypeID" Type="int" />
+    <Property Name="OutsourceVehicleGroupCompaniesID" Type="int" />
+  </EntityType>
+  <EntityType Name="VehicleBrandType">
+    <Key>
+      <PropertyRef Name="VehicleBrandTypeID" />
+    </Key>
+    <Property Name="VehicleBrandTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VehicleBrandTypeDescription" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleModelTypeID" Type="int" />
+  </EntityType>
+  <EntityType Name="VehicleColor">
+    <Key>
+      <PropertyRef Name="VehicleColorID" />
+    </Key>
+    <Property Name="VehicleColorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VehicleColorDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="VehicleGroup">
+    <Key>
+      <PropertyRef Name="VehicleGroupID" />
+    </Key>
+    <Property Name="VehicleGroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VehicleGroupDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="VehicleMaintenance">
+    <Key>
+      <PropertyRef Name="VehicleMaintenanceID" />
+    </Key>
+    <Property Name="VehicleMaintenanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KmToMaintenance" Type="varchar" MaxLength="50" />
+    <Property Name="MaintenanceStatus" Type="bit" />
+    <Property Name="MaintenanceDate" Type="datetime" />
+    <Property Name="VehicleID" Type="int" />
+    <Property Name="ServiceProviderID" Type="int" />
+  </EntityType>
+  <EntityType Name="VehicleModelType">
+    <Key>
+      <PropertyRef Name="VehicleModelTypeID" />
+    </Key>
+    <Property Name="VehicleModelTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VehicleModelTypeDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="VehicleType">
+    <Key>
+      <PropertyRef Name="VehicleTypeID" />
+    </Key>
+    <Property Name="VehicleTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VehicleTypeDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ZoneRate">
+    <Key>
+      <PropertyRef Name="ZoneRateID" />
+    </Key>
+    <Property Name="ZoneRateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ZoneRateDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__Booking__Booking__01142BA1">
+    <End Role="BookingType" Type="Self.BookingType" Multiplicity="0..1" />
+    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookingType">
+        <PropertyRef Name="BookingTypeID" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="BookingTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Booking__QuoteID__00200768">
+    <End Role="Quote" Type="Self.Quote" Multiplicity="0..1" />
+    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Driver__DriverTy__5AEE82B9">
+    <End Role="DriverType" Type="Self.DriverType" Multiplicity="0..1" />
+    <End Role="Driver" Type="Self.Driver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DriverType">
+        <PropertyRef Name="DriverTypeID" />
+      </Principal>
+      <Dependent Role="Driver">
+        <PropertyRef Name="DriverTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Driver__Employee__5BE2A6F2">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Driver" Type="Self.Driver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Driver">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Driver__LicenseT__59FA5E80">
+    <End Role="LicenseType" Type="Self.LicenseType" Multiplicity="0..1" />
+    <End Role="Driver" Type="Self.Driver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LicenseType">
+        <PropertyRef Name="LicenseTypeID" />
+      </Principal>
+      <Dependent Role="Driver">
+        <PropertyRef Name="LicenseTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__Access__5070F446">
+    <End Role="AccessLevel" Type="Self.AccessLevel" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccessLevel">
+        <PropertyRef Name="AccessLevelID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="AccessLevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__AuditT__4F7CD00D">
+    <End Role="AuditTrail" Type="Self.AuditTrail" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuditTrail">
+        <PropertyRef Name="AuditTrailID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="AuditTrailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__CityID__52593CB8">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__Countr__4BAC3F29">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__Employ__4AB81AF0">
+    <End Role="EmployeeType" Type="Self.EmployeeType" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeType">
+        <PropertyRef Name="EmployeeTypeID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="EmployeeTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__Gender__534D60F1">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="GenderID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__Nation__5165187F">
+    <End Role="Nationality" Type="Self.Nationality" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nationality">
+        <PropertyRef Name="NationalityID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="NationalityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__Provin__4D94879B">
+    <End Role="Province" Type="Self.Province" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="ProvinceID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="ProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__Suburb__4E88ABD4">
+    <End Role="Suburb" Type="Self.Suburb" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suburb">
+        <PropertyRef Name="SuburbID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="SuburbID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__TitleI__4CA06362">
+    <End Role="Title" Type="Self.Title" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Title">
+        <PropertyRef Name="TitleID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="TitleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Quote__ClientID__7B5B524B">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="Quote" Type="Self.Quote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="Quote">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Report__QuoteID__160F4887">
+    <End Role="Quote" Type="Self.Quote" Multiplicity="0..1" />
+    <End Role="Report" Type="Self.Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Trip__DropOffLoc__09A971A2">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Trip" Type="Self.Trip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="Trip">
+        <PropertyRef Name="DropOffLocation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Trip__PassengerI__07C12930">
+    <End Role="Passenger" Type="Self.Passenger" Multiplicity="0..1" />
+    <End Role="Trip" Type="Self.Trip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Passenger">
+        <PropertyRef Name="PassengerID" />
+      </Principal>
+      <Dependent Role="Trip">
+        <PropertyRef Name="PassengerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Trip__PickupLoca__08B54D69">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Trip" Type="Self.Trip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="Trip">
+        <PropertyRef Name="PickupLocation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Trip__QuoteID__0A9D95DB">
+    <End Role="Quote" Type="Self.Quote" Multiplicity="0..1" />
+    <End Role="Trip" Type="Self.Trip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="Trip">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vehicle__Outsour__70DDC3D8">
+    <End Role="OutsourceVehicleGroupCompanies" Type="Self.OutsourceVehicleGroupCompanies" Multiplicity="0..1" />
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OutsourceVehicleGroupCompanies">
+        <PropertyRef Name="OutsourceVehicleGroupCompaniesID" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="OutsourceVehicleGroupCompaniesID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vehicle__Vehicle__6D0D32F4">
+    <End Role="VehicleBrandType" Type="Self.VehicleBrandType" Multiplicity="0..1" />
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleBrandType">
+        <PropertyRef Name="VehicleBrandTypeID" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="VehicleBrandTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vehicle__Vehicle__6E01572D">
+    <End Role="VehicleColor" Type="Self.VehicleColor" Multiplicity="0..1" />
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleColor">
+        <PropertyRef Name="VehicleColorID" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="VehicleColorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vehicle__Vehicle__6EF57B66">
+    <End Role="VehicleGroup" Type="Self.VehicleGroup" Multiplicity="0..1" />
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleGroup">
+        <PropertyRef Name="VehicleGroupID" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="VehicleGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vehicle__Vehicle__6FE99F9F">
+    <End Role="VehicleType" Type="Self.VehicleType" Multiplicity="0..1" />
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleType">
+        <PropertyRef Name="VehicleTypeID" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="VehicleTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VehicleBr__Vehic__628FA481">
+    <End Role="VehicleModelType" Type="Self.VehicleModelType" Multiplicity="0..1" />
+    <End Role="VehicleBrandType" Type="Self.VehicleBrandType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleModelType">
+        <PropertyRef Name="VehicleModelTypeID" />
+      </Principal>
+      <Dependent Role="VehicleBrandType">
+        <PropertyRef Name="VehicleModelTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VehicleMa__Servi__76969D2E">
+    <End Role="ServiceProvider" Type="Self.ServiceProvider" Multiplicity="0..1" />
+    <End Role="VehicleMaintenance" Type="Self.VehicleMaintenance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceProvider">
+        <PropertyRef Name="ServiceProviderID" />
+      </Principal>
+      <Dependent Role="VehicleMaintenance">
+        <PropertyRef Name="ServiceProviderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VehicleMa__Vehic__75A278F5">
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+    <End Role="VehicleMaintenance" Type="Self.VehicleMaintenance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="VehicleID" />
+      </Principal>
+      <Dependent Role="VehicleMaintenance">
+        <PropertyRef Name="VehicleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SiyayaTravelAssistModelStoreContainer">
+    <EntitySet Name="AccessLevel" EntityType="Self.AccessLevel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuditTrail" EntityType="Self.AuditTrail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookingType" EntityType="Self.BookingType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Driver" EntityType="Self.Driver" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DriverType" EntityType="Self.DriverType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeType" EntityType="Self.EmployeeType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LicenseType" EntityType="Self.LicenseType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nationality" EntityType="Self.Nationality" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OutsourceVehicleGroupCompanies" EntityType="Self.OutsourceVehicleGroupCompanies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Passenger" EntityType="Self.Passenger" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Province" EntityType="Self.Province" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Quote" EntityType="Self.Quote" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Report" EntityType="Self.Report" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceProvider" EntityType="Self.ServiceProvider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Suburb" EntityType="Self.Suburb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Title" EntityType="Self.Title" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trip" EntityType="Self.Trip" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicle" EntityType="Self.Vehicle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VehicleBrandType" EntityType="Self.VehicleBrandType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VehicleColor" EntityType="Self.VehicleColor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VehicleGroup" EntityType="Self.VehicleGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VehicleMaintenance" EntityType="Self.VehicleMaintenance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VehicleModelType" EntityType="Self.VehicleModelType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VehicleType" EntityType="Self.VehicleType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ZoneRate" EntityType="Self.ZoneRate" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Booking__Booking__01142BA1" Association="Self.FK__Booking__Booking__01142BA1">
+      <End Role="BookingType" EntitySet="BookingType" />
+      <End Role="Booking" EntitySet="Booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Booking__QuoteID__00200768" Association="Self.FK__Booking__QuoteID__00200768">
+      <End Role="Quote" EntitySet="Quote" />
+      <End Role="Booking" EntitySet="Booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Driver__DriverTy__5AEE82B9" Association="Self.FK__Driver__DriverTy__5AEE82B9">
+      <End Role="DriverType" EntitySet="DriverType" />
+      <End Role="Driver" EntitySet="Driver" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Driver__Employee__5BE2A6F2" Association="Self.FK__Driver__Employee__5BE2A6F2">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Driver" EntitySet="Driver" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Driver__LicenseT__59FA5E80" Association="Self.FK__Driver__LicenseT__59FA5E80">
+      <End Role="LicenseType" EntitySet="LicenseType" />
+      <End Role="Driver" EntitySet="Driver" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__Access__5070F446" Association="Self.FK__Employee__Access__5070F446">
+      <End Role="AccessLevel" EntitySet="AccessLevel" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__AuditT__4F7CD00D" Association="Self.FK__Employee__AuditT__4F7CD00D">
+      <End Role="AuditTrail" EntitySet="AuditTrail" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__CityID__52593CB8" Association="Self.FK__Employee__CityID__52593CB8">
+      <End Role="City" EntitySet="City" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__Countr__4BAC3F29" Association="Self.FK__Employee__Countr__4BAC3F29">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__Employ__4AB81AF0" Association="Self.FK__Employee__Employ__4AB81AF0">
+      <End Role="EmployeeType" EntitySet="EmployeeType" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__Gender__534D60F1" Association="Self.FK__Employee__Gender__534D60F1">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__Nation__5165187F" Association="Self.FK__Employee__Nation__5165187F">
+      <End Role="Nationality" EntitySet="Nationality" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__Provin__4D94879B" Association="Self.FK__Employee__Provin__4D94879B">
+      <End Role="Province" EntitySet="Province" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__Suburb__4E88ABD4" Association="Self.FK__Employee__Suburb__4E88ABD4">
+      <End Role="Suburb" EntitySet="Suburb" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__TitleI__4CA06362" Association="Self.FK__Employee__TitleI__4CA06362">
+      <End Role="Title" EntitySet="Title" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Quote__ClientID__7B5B524B" Association="Self.FK__Quote__ClientID__7B5B524B">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Quote" EntitySet="Quote" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Report__QuoteID__160F4887" Association="Self.FK__Report__QuoteID__160F4887">
+      <End Role="Quote" EntitySet="Quote" />
+      <End Role="Report" EntitySet="Report" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Trip__DropOffLoc__09A971A2" Association="Self.FK__Trip__DropOffLoc__09A971A2">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Trip" EntitySet="Trip" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Trip__PassengerI__07C12930" Association="Self.FK__Trip__PassengerI__07C12930">
+      <End Role="Passenger" EntitySet="Passenger" />
+      <End Role="Trip" EntitySet="Trip" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Trip__PickupLoca__08B54D69" Association="Self.FK__Trip__PickupLoca__08B54D69">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Trip" EntitySet="Trip" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Trip__QuoteID__0A9D95DB" Association="Self.FK__Trip__QuoteID__0A9D95DB">
+      <End Role="Quote" EntitySet="Quote" />
+      <End Role="Trip" EntitySet="Trip" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vehicle__Outsour__70DDC3D8" Association="Self.FK__Vehicle__Outsour__70DDC3D8">
+      <End Role="OutsourceVehicleGroupCompanies" EntitySet="OutsourceVehicleGroupCompanies" />
+      <End Role="Vehicle" EntitySet="Vehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vehicle__Vehicle__6D0D32F4" Association="Self.FK__Vehicle__Vehicle__6D0D32F4">
+      <End Role="VehicleBrandType" EntitySet="VehicleBrandType" />
+      <End Role="Vehicle" EntitySet="Vehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vehicle__Vehicle__6E01572D" Association="Self.FK__Vehicle__Vehicle__6E01572D">
+      <End Role="VehicleColor" EntitySet="VehicleColor" />
+      <End Role="Vehicle" EntitySet="Vehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vehicle__Vehicle__6EF57B66" Association="Self.FK__Vehicle__Vehicle__6EF57B66">
+      <End Role="VehicleGroup" EntitySet="VehicleGroup" />
+      <End Role="Vehicle" EntitySet="Vehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vehicle__Vehicle__6FE99F9F" Association="Self.FK__Vehicle__Vehicle__6FE99F9F">
+      <End Role="VehicleType" EntitySet="VehicleType" />
+      <End Role="Vehicle" EntitySet="Vehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VehicleBr__Vehic__628FA481" Association="Self.FK__VehicleBr__Vehic__628FA481">
+      <End Role="VehicleModelType" EntitySet="VehicleModelType" />
+      <End Role="VehicleBrandType" EntitySet="VehicleBrandType" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VehicleMa__Servi__76969D2E" Association="Self.FK__VehicleMa__Servi__76969D2E">
+      <End Role="ServiceProvider" EntitySet="ServiceProvider" />
+      <End Role="VehicleMaintenance" EntitySet="VehicleMaintenance" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VehicleMa__Vehic__75A278F5" Association="Self.FK__VehicleMa__Vehic__75A278F5">
+      <End Role="Vehicle" EntitySet="Vehicle" />
+      <End Role="VehicleMaintenance" EntitySet="VehicleMaintenance" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

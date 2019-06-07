@@ -1,0 +1,26 @@
+﻿@model SiyayaTravelAssist.Models.OutsourceVehicleGroupCompany
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OutsourceVehicleGroupCompany</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OutsourceVehicleGroupCompaniesDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OutsourceVehicleGroupCompaniesDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OutsourceVehicleGroupCompaniesID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

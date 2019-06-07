@@ -1,0 +1,26 @@
+﻿@model SiyayaTravelAssist.Models.VehicleModelType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VehicleModelType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleModelTypeDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleModelTypeDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VehicleModelTypeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

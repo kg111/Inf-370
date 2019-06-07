@@ -1,0 +1,842 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SiyayaTravelAssistModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SiyayaTravelAssistEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AccessLevels" EntityType="SiyayaTravelAssistModel.AccessLevel" />
+    <EntitySet Name="AuditTrails" EntityType="SiyayaTravelAssistModel.AuditTrail" />
+    <EntitySet Name="Bookings" EntityType="SiyayaTravelAssistModel.Booking" />
+    <EntitySet Name="BookingTypes" EntityType="SiyayaTravelAssistModel.BookingType" />
+    <EntitySet Name="Cities" EntityType="SiyayaTravelAssistModel.City" />
+    <EntitySet Name="Clients" EntityType="SiyayaTravelAssistModel.Client" />
+    <EntitySet Name="Countries" EntityType="SiyayaTravelAssistModel.Country" />
+    <EntitySet Name="Drivers" EntityType="SiyayaTravelAssistModel.Driver" />
+    <EntitySet Name="DriverTypes" EntityType="SiyayaTravelAssistModel.DriverType" />
+    <EntitySet Name="Employees" EntityType="SiyayaTravelAssistModel.Employee" />
+    <EntitySet Name="EmployeeTypes" EntityType="SiyayaTravelAssistModel.EmployeeType" />
+    <EntitySet Name="Genders" EntityType="SiyayaTravelAssistModel.Gender" />
+    <EntitySet Name="LicenseTypes" EntityType="SiyayaTravelAssistModel.LicenseType" />
+    <EntitySet Name="Locations" EntityType="SiyayaTravelAssistModel.Location" />
+    <EntitySet Name="Nationalities" EntityType="SiyayaTravelAssistModel.Nationality" />
+    <EntitySet Name="OutsourceVehicleGroupCompanies" EntityType="SiyayaTravelAssistModel.OutsourceVehicleGroupCompany" />
+    <EntitySet Name="Passengers" EntityType="SiyayaTravelAssistModel.Passenger" />
+    <EntitySet Name="Provinces" EntityType="SiyayaTravelAssistModel.Province" />
+    <EntitySet Name="Quotes" EntityType="SiyayaTravelAssistModel.Quote" />
+    <EntitySet Name="ServiceProviders" EntityType="SiyayaTravelAssistModel.ServiceProvider" />
+    <EntitySet Name="Suburbs" EntityType="SiyayaTravelAssistModel.Suburb" />
+    <EntitySet Name="Titles" EntityType="SiyayaTravelAssistModel.Title" />
+    <EntitySet Name="Trips" EntityType="SiyayaTravelAssistModel.Trip" />
+    <EntitySet Name="Vehicles" EntityType="SiyayaTravelAssistModel.Vehicle" />
+    <EntitySet Name="VehicleBrandTypes" EntityType="SiyayaTravelAssistModel.VehicleBrandType" />
+    <EntitySet Name="VehicleColors" EntityType="SiyayaTravelAssistModel.VehicleColor" />
+    <EntitySet Name="VehicleGroups" EntityType="SiyayaTravelAssistModel.VehicleGroup" />
+    <EntitySet Name="VehicleMaintenances" EntityType="SiyayaTravelAssistModel.VehicleMaintenance" />
+    <EntitySet Name="VehicleModelTypes" EntityType="SiyayaTravelAssistModel.VehicleModelType" />
+    <EntitySet Name="VehicleTypes" EntityType="SiyayaTravelAssistModel.VehicleType" />
+    <EntitySet Name="ZoneRates" EntityType="SiyayaTravelAssistModel.ZoneRate" />
+    <AssociationSet Name="FK__Employee__Access__619B8048" Association="SiyayaTravelAssistModel.FK__Employee__Access__619B8048">
+      <End Role="AccessLevel" EntitySet="AccessLevels" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__AuditT__60A75C0F" Association="SiyayaTravelAssistModel.FK__Employee__AuditT__60A75C0F">
+      <End Role="AuditTrail" EntitySet="AuditTrails" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Booking__Booking__208CD6FA" Association="SiyayaTravelAssistModel.FK__Booking__Booking__208CD6FA">
+      <End Role="BookingType" EntitySet="BookingTypes" />
+      <End Role="Booking" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Booking__QuoteID__1F98B2C1" Association="SiyayaTravelAssistModel.FK__Booking__QuoteID__1F98B2C1">
+      <End Role="Quote" EntitySet="Quotes" />
+      <End Role="Booking" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Quote__ClientID__1AD3FDA4" Association="SiyayaTravelAssistModel.FK__Quote__ClientID__1AD3FDA4">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Quote" EntitySet="Quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__Countr__5CD6CB2B" Association="SiyayaTravelAssistModel.FK__Employee__Countr__5CD6CB2B">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Driver__DriverTy__6D0D32F4" Association="SiyayaTravelAssistModel.FK__Driver__DriverTy__6D0D32F4">
+      <End Role="DriverType" EntitySet="DriverTypes" />
+      <End Role="Driver" EntitySet="Drivers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Driver__Employee__6E01572D" Association="SiyayaTravelAssistModel.FK__Driver__Employee__6E01572D">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Driver" EntitySet="Drivers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Driver__LicenseT__6C190EBB" Association="SiyayaTravelAssistModel.FK__Driver__LicenseT__6C190EBB">
+      <End Role="LicenseType" EntitySet="LicenseTypes" />
+      <End Role="Driver" EntitySet="Drivers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__Employ__5BE2A6F2" Association="SiyayaTravelAssistModel.FK__Employee__Employ__5BE2A6F2">
+      <End Role="EmployeeType" EntitySet="EmployeeTypes" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__Nation__628FA481" Association="SiyayaTravelAssistModel.FK__Employee__Nation__628FA481">
+      <End Role="Nationality" EntitySet="Nationalities" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__Provin__5EBF139D" Association="SiyayaTravelAssistModel.FK__Employee__Provin__5EBF139D">
+      <End Role="Province" EntitySet="Provinces" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__Suburb__5FB337D6" Association="SiyayaTravelAssistModel.FK__Employee__Suburb__5FB337D6">
+      <End Role="Suburb" EntitySet="Suburbs" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__TitleI__5DCAEF64" Association="SiyayaTravelAssistModel.FK__Employee__TitleI__5DCAEF64">
+      <End Role="Title" EntitySet="Titles" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Trip__DropOffLoc__29221CFB" Association="SiyayaTravelAssistModel.FK__Trip__DropOffLoc__29221CFB">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="Trip" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Trip__PickupLoca__282DF8C2" Association="SiyayaTravelAssistModel.FK__Trip__PickupLoca__282DF8C2">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="Trip" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vehicle__Outsour__10566F31" Association="SiyayaTravelAssistModel.FK__Vehicle__Outsour__10566F31">
+      <End Role="OutsourceVehicleGroupCompany" EntitySet="OutsourceVehicleGroupCompanies" />
+      <End Role="Vehicle" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Trip__PassengerI__2739D489" Association="SiyayaTravelAssistModel.FK__Trip__PassengerI__2739D489">
+      <End Role="Passenger" EntitySet="Passengers" />
+      <End Role="Trip" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VehicleMa__Servi__160F4887" Association="SiyayaTravelAssistModel.FK__VehicleMa__Servi__160F4887">
+      <End Role="ServiceProvider" EntitySet="ServiceProviders" />
+      <End Role="VehicleMaintenance" EntitySet="VehicleMaintenances" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vehicle__Vehicle__0C85DE4D" Association="SiyayaTravelAssistModel.FK__Vehicle__Vehicle__0C85DE4D">
+      <End Role="VehicleBrandType" EntitySet="VehicleBrandTypes" />
+      <End Role="Vehicle" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vehicle__Vehicle__0D7A0286" Association="SiyayaTravelAssistModel.FK__Vehicle__Vehicle__0D7A0286">
+      <End Role="VehicleColor" EntitySet="VehicleColors" />
+      <End Role="Vehicle" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vehicle__Vehicle__0E6E26BF" Association="SiyayaTravelAssistModel.FK__Vehicle__Vehicle__0E6E26BF">
+      <End Role="VehicleGroup" EntitySet="VehicleGroups" />
+      <End Role="Vehicle" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vehicle__Vehicle__0F624AF8" Association="SiyayaTravelAssistModel.FK__Vehicle__Vehicle__0F624AF8">
+      <End Role="VehicleType" EntitySet="VehicleTypes" />
+      <End Role="Vehicle" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VehicleMa__Vehic__151B244E" Association="SiyayaTravelAssistModel.FK__VehicleMa__Vehic__151B244E">
+      <End Role="Vehicle" EntitySet="Vehicles" />
+      <End Role="VehicleMaintenance" EntitySet="VehicleMaintenances" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VehicleBr__Vehic__74AE54BC" Association="SiyayaTravelAssistModel.FK__VehicleBr__Vehic__74AE54BC">
+      <End Role="VehicleModelType" EntitySet="VehicleModelTypes" />
+      <End Role="VehicleBrandType" EntitySet="VehicleBrandTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__CityID__52593CB8" Association="SiyayaTravelAssistModel.FK__Employee__CityID__52593CB8">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__Gender__534D60F1" Association="SiyayaTravelAssistModel.FK__Employee__Gender__534D60F1">
+      <End Role="Gender" EntitySet="Genders" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Trip__QuoteID__0A9D95DB" Association="SiyayaTravelAssistModel.FK__Trip__QuoteID__0A9D95DB">
+      <End Role="Quote" EntitySet="Quotes" />
+      <End Role="Trip" EntitySet="Trips" />
+    </AssociationSet>
+    <EntitySet Name="Reports" EntityType="SiyayaTravelAssistModel.Report" />
+    <AssociationSet Name="FK__Report__QuoteID__160F4887" Association="SiyayaTravelAssistModel.FK__Report__QuoteID__160F4887">
+      <End Role="Quote" EntitySet="Quotes" />
+      <End Role="Report" EntitySet="Reports" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AccessLevel">
+    <Key>
+      <PropertyRef Name="AccessLevelID" />
+    </Key>
+    <Property Name="AccessLevelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccessLevelDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="SiyayaTravelAssistModel.FK__Employee__Access__619B8048" FromRole="AccessLevel" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="AuditTrail">
+    <Key>
+      <PropertyRef Name="AuditTrailID" />
+    </Key>
+    <Property Name="AuditTrailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AuditTrailDate" Type="DateTime" Precision="3" />
+    <Property Name="AuditTrailTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Employees" Relationship="SiyayaTravelAssistModel.FK__Employee__AuditT__60A75C0F" FromRole="AuditTrail" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="BookingID" />
+    </Key>
+    <Property Name="BookingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="BookingStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BookingReference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BookingOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="numberOfPassengers" Type="Int32" />
+    <Property Name="PaymentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AdditionalInformation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="QuoteID" Type="Int32" />
+    <Property Name="BookingTypeID" Type="Int32" />
+    <NavigationProperty Name="BookingType" Relationship="SiyayaTravelAssistModel.FK__Booking__Booking__208CD6FA" FromRole="Booking" ToRole="BookingType" />
+    <NavigationProperty Name="Quote" Relationship="SiyayaTravelAssistModel.FK__Booking__QuoteID__1F98B2C1" FromRole="Booking" ToRole="Quote" />
+  </EntityType>
+  <EntityType Name="BookingType">
+    <Key>
+      <PropertyRef Name="BookingTypeID" />
+    </Key>
+    <Property Name="BookingTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookingTypeDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Bookings" Relationship="SiyayaTravelAssistModel.FK__Booking__Booking__208CD6FA" FromRole="BookingType" ToRole="Booking" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="SiyayaTravelAssistModel.FK__Employee__CityID__52593CB8" FromRole="City" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientReference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClientName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhysicalAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Quotes" Relationship="SiyayaTravelAssistModel.FK__Quote__ClientID__1AD3FDA4" FromRole="Client" ToRole="Quote" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="SiyayaTravelAssistModel.FK__Employee__Countr__5CD6CB2B" FromRole="Country" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Driver">
+    <Key>
+      <PropertyRef Name="DriverID" />
+    </Key>
+    <Property Name="DriverID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LicenseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LicenseExpiryDate" Type="DateTime" Precision="3" />
+    <Property Name="OutsourceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OutsourceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OutsourseIdentityNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LicenseTypeID" Type="Int32" />
+    <Property Name="DriverTypeID" Type="Int32" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <NavigationProperty Name="DriverType" Relationship="SiyayaTravelAssistModel.FK__Driver__DriverTy__6D0D32F4" FromRole="Driver" ToRole="DriverType" />
+    <NavigationProperty Name="Employee" Relationship="SiyayaTravelAssistModel.FK__Driver__Employee__6E01572D" FromRole="Driver" ToRole="Employee" />
+    <NavigationProperty Name="LicenseType" Relationship="SiyayaTravelAssistModel.FK__Driver__LicenseT__6C190EBB" FromRole="Driver" ToRole="LicenseType" />
+  </EntityType>
+  <EntityType Name="DriverType">
+    <Key>
+      <PropertyRef Name="DriverTypeID" />
+    </Key>
+    <Property Name="DriverTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DriverTypeDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Drivers" Relationship="SiyayaTravelAssistModel.FK__Driver__DriverTy__6D0D32F4" FromRole="DriverType" ToRole="Driver" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="254" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsEmailVerified" Type="Boolean" />
+    <Property Name="EmployeeTypeID" Type="Int32" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="TitleID" Type="Int32" />
+    <Property Name="ProvinceID" Type="Int32" />
+    <Property Name="SuburbID" Type="Int32" />
+    <Property Name="AuditTrailID" Type="Int32" />
+    <Property Name="AccessLevelID" Type="Int32" />
+    <Property Name="NationalityID" Type="Int32" />
+    <NavigationProperty Name="AccessLevel" Relationship="SiyayaTravelAssistModel.FK__Employee__Access__619B8048" FromRole="Employee" ToRole="AccessLevel" />
+    <NavigationProperty Name="AuditTrail" Relationship="SiyayaTravelAssistModel.FK__Employee__AuditT__60A75C0F" FromRole="Employee" ToRole="AuditTrail" />
+    <NavigationProperty Name="Country" Relationship="SiyayaTravelAssistModel.FK__Employee__Countr__5CD6CB2B" FromRole="Employee" ToRole="Country" />
+    <NavigationProperty Name="Drivers" Relationship="SiyayaTravelAssistModel.FK__Driver__Employee__6E01572D" FromRole="Employee" ToRole="Driver" />
+    <NavigationProperty Name="EmployeeType" Relationship="SiyayaTravelAssistModel.FK__Employee__Employ__5BE2A6F2" FromRole="Employee" ToRole="EmployeeType" />
+    <NavigationProperty Name="Nationality" Relationship="SiyayaTravelAssistModel.FK__Employee__Nation__628FA481" FromRole="Employee" ToRole="Nationality" />
+    <NavigationProperty Name="Province" Relationship="SiyayaTravelAssistModel.FK__Employee__Provin__5EBF139D" FromRole="Employee" ToRole="Province" />
+    <NavigationProperty Name="Suburb" Relationship="SiyayaTravelAssistModel.FK__Employee__Suburb__5FB337D6" FromRole="Employee" ToRole="Suburb" />
+    <NavigationProperty Name="Title" Relationship="SiyayaTravelAssistModel.FK__Employee__TitleI__5DCAEF64" FromRole="Employee" ToRole="Title" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="Gender" Type="Int32" />
+    <NavigationProperty Name="City" Relationship="SiyayaTravelAssistModel.FK__Employee__CityID__52593CB8" FromRole="Employee" ToRole="City" />
+    <NavigationProperty Name="Gender1" Relationship="SiyayaTravelAssistModel.FK__Employee__Gender__534D60F1" FromRole="Employee" ToRole="Gender" />
+  </EntityType>
+  <EntityType Name="EmployeeType">
+    <Key>
+      <PropertyRef Name="EmployeeTypeID" />
+    </Key>
+    <Property Name="EmployeeTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeTypeDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="SiyayaTravelAssistModel.FK__Employee__Employ__5BE2A6F2" FromRole="EmployeeType" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GenderDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="SiyayaTravelAssistModel.FK__Employee__Gender__534D60F1" FromRole="Gender" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="LicenseType">
+    <Key>
+      <PropertyRef Name="LicenseTypeID" />
+    </Key>
+    <Property Name="LicenseTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LicenseTypeDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Drivers" Relationship="SiyayaTravelAssistModel.FK__Driver__LicenseT__6C190EBB" FromRole="LicenseType" ToRole="Driver" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Trips" Relationship="SiyayaTravelAssistModel.FK__Trip__DropOffLoc__29221CFB" FromRole="Location" ToRole="Trip" />
+    <NavigationProperty Name="Trips1" Relationship="SiyayaTravelAssistModel.FK__Trip__PickupLoca__282DF8C2" FromRole="Location" ToRole="Trip" />
+  </EntityType>
+  <EntityType Name="Nationality">
+    <Key>
+      <PropertyRef Name="NationalityID" />
+    </Key>
+    <Property Name="NationalityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NationalityDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="SiyayaTravelAssistModel.FK__Employee__Nation__628FA481" FromRole="Nationality" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="OutsourceVehicleGroupCompany">
+    <Key>
+      <PropertyRef Name="OutsourceVehicleGroupCompaniesID" />
+    </Key>
+    <Property Name="OutsourceVehicleGroupCompaniesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OutsourceVehicleGroupCompaniesDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Vehicles" Relationship="SiyayaTravelAssistModel.FK__Vehicle__Outsour__10566F31" FromRole="OutsourceVehicleGroupCompany" ToRole="Vehicle" />
+  </EntityType>
+  <EntityType Name="Passenger">
+    <Key>
+      <PropertyRef Name="PassengerID" />
+    </Key>
+    <Property Name="PassengerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PassengerDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Trips" Relationship="SiyayaTravelAssistModel.FK__Trip__PassengerI__2739D489" FromRole="Passenger" ToRole="Trip" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProvinceDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="SiyayaTravelAssistModel.FK__Employee__Provin__5EBF139D" FromRole="Province" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Quote">
+    <Key>
+      <PropertyRef Name="QuoteID" />
+    </Key>
+    <Property Name="QuoteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="Price" Type="Single" />
+    <Property Name="QuoteStatus" Type="Boolean" />
+    <Property Name="ClientID" Type="Int32" />
+    <NavigationProperty Name="Bookings" Relationship="SiyayaTravelAssistModel.FK__Booking__QuoteID__1F98B2C1" FromRole="Quote" ToRole="Booking" />
+    <NavigationProperty Name="Client" Relationship="SiyayaTravelAssistModel.FK__Quote__ClientID__1AD3FDA4" FromRole="Quote" ToRole="Client" />
+    <NavigationProperty Name="Trips" Relationship="SiyayaTravelAssistModel.FK__Trip__QuoteID__0A9D95DB" FromRole="Quote" ToRole="Trip" />
+    <NavigationProperty Name="Reports" Relationship="SiyayaTravelAssistModel.FK__Report__QuoteID__160F4887" FromRole="Quote" ToRole="Report" />
+  </EntityType>
+  <EntityType Name="ServiceProvider">
+    <Key>
+      <PropertyRef Name="ServiceProviderID" />
+    </Key>
+    <Property Name="ServiceProviderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceProviderName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhysicalAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="VehicleMaintenances" Relationship="SiyayaTravelAssistModel.FK__VehicleMa__Servi__160F4887" FromRole="ServiceProvider" ToRole="VehicleMaintenance" />
+  </EntityType>
+  <EntityType Name="Suburb">
+    <Key>
+      <PropertyRef Name="SuburbID" />
+    </Key>
+    <Property Name="SuburbID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SuburbDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="SiyayaTravelAssistModel.FK__Employee__Suburb__5FB337D6" FromRole="Suburb" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Title">
+    <Key>
+      <PropertyRef Name="TitleID" />
+    </Key>
+    <Property Name="TitleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TitleDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="SiyayaTravelAssistModel.FK__Employee__TitleI__5DCAEF64" FromRole="Title" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Trip">
+    <Key>
+      <PropertyRef Name="TripID" />
+    </Key>
+    <Property Name="TripID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PickupTime" Type="DateTime" Precision="3" />
+    <Property Name="DropOffTime" Type="DateTime" Precision="3" />
+    <Property Name="TripDate" Type="DateTime" Precision="3" />
+    <Property Name="PassengerID" Type="Int32" />
+    <Property Name="PickupLocation" Type="Int32" />
+    <Property Name="DropOffLocation" Type="Int32" />
+    <NavigationProperty Name="Location" Relationship="SiyayaTravelAssistModel.FK__Trip__DropOffLoc__29221CFB" FromRole="Trip" ToRole="Location" />
+    <NavigationProperty Name="Location1" Relationship="SiyayaTravelAssistModel.FK__Trip__PickupLoca__282DF8C2" FromRole="Trip" ToRole="Location" />
+    <NavigationProperty Name="Passenger" Relationship="SiyayaTravelAssistModel.FK__Trip__PassengerI__2739D489" FromRole="Trip" ToRole="Passenger" />
+    <Property Name="Distance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QuoteID" Type="Int32" />
+    <NavigationProperty Name="Quote" Relationship="SiyayaTravelAssistModel.FK__Trip__QuoteID__0A9D95DB" FromRole="Trip" ToRole="Quote" />
+  </EntityType>
+  <EntityType Name="Vehicle">
+    <Key>
+      <PropertyRef Name="VehicleID" />
+    </Key>
+    <Property Name="VehicleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleLicenseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleBrandTypeID" Type="Int32" />
+    <Property Name="VehicleColorID" Type="Int32" />
+    <Property Name="VehicleGroupID" Type="Int32" />
+    <Property Name="VehicleTypeID" Type="Int32" />
+    <Property Name="OutsourceVehicleGroupCompaniesID" Type="Int32" />
+    <NavigationProperty Name="OutsourceVehicleGroupCompany" Relationship="SiyayaTravelAssistModel.FK__Vehicle__Outsour__10566F31" FromRole="Vehicle" ToRole="OutsourceVehicleGroupCompany" />
+    <NavigationProperty Name="VehicleBrandType" Relationship="SiyayaTravelAssistModel.FK__Vehicle__Vehicle__0C85DE4D" FromRole="Vehicle" ToRole="VehicleBrandType" />
+    <NavigationProperty Name="VehicleColor" Relationship="SiyayaTravelAssistModel.FK__Vehicle__Vehicle__0D7A0286" FromRole="Vehicle" ToRole="VehicleColor" />
+    <NavigationProperty Name="VehicleGroup" Relationship="SiyayaTravelAssistModel.FK__Vehicle__Vehicle__0E6E26BF" FromRole="Vehicle" ToRole="VehicleGroup" />
+    <NavigationProperty Name="VehicleType" Relationship="SiyayaTravelAssistModel.FK__Vehicle__Vehicle__0F624AF8" FromRole="Vehicle" ToRole="VehicleType" />
+    <NavigationProperty Name="VehicleMaintenances" Relationship="SiyayaTravelAssistModel.FK__VehicleMa__Vehic__151B244E" FromRole="Vehicle" ToRole="VehicleMaintenance" />
+  </EntityType>
+  <EntityType Name="VehicleBrandType">
+    <Key>
+      <PropertyRef Name="VehicleBrandTypeID" />
+    </Key>
+    <Property Name="VehicleBrandTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleBrandTypeDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleModelTypeID" Type="Int32" />
+    <NavigationProperty Name="Vehicles" Relationship="SiyayaTravelAssistModel.FK__Vehicle__Vehicle__0C85DE4D" FromRole="VehicleBrandType" ToRole="Vehicle" />
+    <NavigationProperty Name="VehicleModelType" Relationship="SiyayaTravelAssistModel.FK__VehicleBr__Vehic__74AE54BC" FromRole="VehicleBrandType" ToRole="VehicleModelType" />
+  </EntityType>
+  <EntityType Name="VehicleColor">
+    <Key>
+      <PropertyRef Name="VehicleColorID" />
+    </Key>
+    <Property Name="VehicleColorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleColorDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Vehicles" Relationship="SiyayaTravelAssistModel.FK__Vehicle__Vehicle__0D7A0286" FromRole="VehicleColor" ToRole="Vehicle" />
+  </EntityType>
+  <EntityType Name="VehicleGroup">
+    <Key>
+      <PropertyRef Name="VehicleGroupID" />
+    </Key>
+    <Property Name="VehicleGroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleGroupDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Vehicles" Relationship="SiyayaTravelAssistModel.FK__Vehicle__Vehicle__0E6E26BF" FromRole="VehicleGroup" ToRole="Vehicle" />
+  </EntityType>
+  <EntityType Name="VehicleMaintenance">
+    <Key>
+      <PropertyRef Name="VehicleMaintenanceID" />
+    </Key>
+    <Property Name="VehicleMaintenanceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KmToMaintenance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MaintenanceStatus" Type="Boolean" />
+    <Property Name="MaintenanceDate" Type="DateTime" Precision="3" />
+    <Property Name="VehicleID" Type="Int32" />
+    <Property Name="ServiceProviderID" Type="Int32" />
+    <NavigationProperty Name="ServiceProvider" Relationship="SiyayaTravelAssistModel.FK__VehicleMa__Servi__160F4887" FromRole="VehicleMaintenance" ToRole="ServiceProvider" />
+    <NavigationProperty Name="Vehicle" Relationship="SiyayaTravelAssistModel.FK__VehicleMa__Vehic__151B244E" FromRole="VehicleMaintenance" ToRole="Vehicle" />
+  </EntityType>
+  <EntityType Name="VehicleModelType">
+    <Key>
+      <PropertyRef Name="VehicleModelTypeID" />
+    </Key>
+    <Property Name="VehicleModelTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleModelTypeDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="VehicleBrandTypes" Relationship="SiyayaTravelAssistModel.FK__VehicleBr__Vehic__74AE54BC" FromRole="VehicleModelType" ToRole="VehicleBrandType" />
+  </EntityType>
+  <EntityType Name="VehicleType">
+    <Key>
+      <PropertyRef Name="VehicleTypeID" />
+    </Key>
+    <Property Name="VehicleTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleTypeDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Vehicles" Relationship="SiyayaTravelAssistModel.FK__Vehicle__Vehicle__0F624AF8" FromRole="VehicleType" ToRole="Vehicle" />
+  </EntityType>
+  <EntityType Name="ZoneRate">
+    <Key>
+      <PropertyRef Name="ZoneRateID" />
+    </Key>
+    <Property Name="ZoneRateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ZoneRateDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__Employee__Access__619B8048">
+    <End Type="SiyayaTravelAssistModel.AccessLevel" Role="AccessLevel" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccessLevel">
+        <PropertyRef Name="AccessLevelID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="AccessLevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__AuditT__60A75C0F">
+    <End Type="SiyayaTravelAssistModel.AuditTrail" Role="AuditTrail" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuditTrail">
+        <PropertyRef Name="AuditTrailID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="AuditTrailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Booking__Booking__208CD6FA">
+    <End Type="SiyayaTravelAssistModel.BookingType" Role="BookingType" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Booking" Role="Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookingType">
+        <PropertyRef Name="BookingTypeID" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="BookingTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Booking__QuoteID__1F98B2C1">
+    <End Type="SiyayaTravelAssistModel.Quote" Role="Quote" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Booking" Role="Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Quote__ClientID__1AD3FDA4">
+    <End Type="SiyayaTravelAssistModel.Client" Role="Client" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Quote" Role="Quote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="Quote">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__Countr__5CD6CB2B">
+    <End Type="SiyayaTravelAssistModel.Country" Role="Country" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Driver__DriverTy__6D0D32F4">
+    <End Type="SiyayaTravelAssistModel.DriverType" Role="DriverType" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Driver" Role="Driver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DriverType">
+        <PropertyRef Name="DriverTypeID" />
+      </Principal>
+      <Dependent Role="Driver">
+        <PropertyRef Name="DriverTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Driver__Employee__6E01572D">
+    <End Type="SiyayaTravelAssistModel.Employee" Role="Employee" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Driver" Role="Driver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Driver">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Driver__LicenseT__6C190EBB">
+    <End Type="SiyayaTravelAssistModel.LicenseType" Role="LicenseType" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Driver" Role="Driver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LicenseType">
+        <PropertyRef Name="LicenseTypeID" />
+      </Principal>
+      <Dependent Role="Driver">
+        <PropertyRef Name="LicenseTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__Employ__5BE2A6F2">
+    <End Type="SiyayaTravelAssistModel.EmployeeType" Role="EmployeeType" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeType">
+        <PropertyRef Name="EmployeeTypeID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="EmployeeTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__Nation__628FA481">
+    <End Type="SiyayaTravelAssistModel.Nationality" Role="Nationality" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nationality">
+        <PropertyRef Name="NationalityID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="NationalityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__Provin__5EBF139D">
+    <End Type="SiyayaTravelAssistModel.Province" Role="Province" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="ProvinceID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="ProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__Suburb__5FB337D6">
+    <End Type="SiyayaTravelAssistModel.Suburb" Role="Suburb" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suburb">
+        <PropertyRef Name="SuburbID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="SuburbID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__TitleI__5DCAEF64">
+    <End Type="SiyayaTravelAssistModel.Title" Role="Title" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Title">
+        <PropertyRef Name="TitleID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="TitleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Trip__DropOffLoc__29221CFB">
+    <End Type="SiyayaTravelAssistModel.Location" Role="Location" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Trip" Role="Trip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="Trip">
+        <PropertyRef Name="DropOffLocation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Trip__PickupLoca__282DF8C2">
+    <End Type="SiyayaTravelAssistModel.Location" Role="Location" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Trip" Role="Trip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="Trip">
+        <PropertyRef Name="PickupLocation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vehicle__Outsour__10566F31">
+    <End Type="SiyayaTravelAssistModel.OutsourceVehicleGroupCompany" Role="OutsourceVehicleGroupCompany" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Vehicle" Role="Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OutsourceVehicleGroupCompany">
+        <PropertyRef Name="OutsourceVehicleGroupCompaniesID" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="OutsourceVehicleGroupCompaniesID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Trip__PassengerI__2739D489">
+    <End Type="SiyayaTravelAssistModel.Passenger" Role="Passenger" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Trip" Role="Trip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Passenger">
+        <PropertyRef Name="PassengerID" />
+      </Principal>
+      <Dependent Role="Trip">
+        <PropertyRef Name="PassengerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VehicleMa__Servi__160F4887">
+    <End Type="SiyayaTravelAssistModel.ServiceProvider" Role="ServiceProvider" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.VehicleMaintenance" Role="VehicleMaintenance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceProvider">
+        <PropertyRef Name="ServiceProviderID" />
+      </Principal>
+      <Dependent Role="VehicleMaintenance">
+        <PropertyRef Name="ServiceProviderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vehicle__Vehicle__0C85DE4D">
+    <End Type="SiyayaTravelAssistModel.VehicleBrandType" Role="VehicleBrandType" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Vehicle" Role="Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleBrandType">
+        <PropertyRef Name="VehicleBrandTypeID" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="VehicleBrandTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vehicle__Vehicle__0D7A0286">
+    <End Type="SiyayaTravelAssistModel.VehicleColor" Role="VehicleColor" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Vehicle" Role="Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleColor">
+        <PropertyRef Name="VehicleColorID" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="VehicleColorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vehicle__Vehicle__0E6E26BF">
+    <End Type="SiyayaTravelAssistModel.VehicleGroup" Role="VehicleGroup" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Vehicle" Role="Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleGroup">
+        <PropertyRef Name="VehicleGroupID" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="VehicleGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vehicle__Vehicle__0F624AF8">
+    <End Type="SiyayaTravelAssistModel.VehicleType" Role="VehicleType" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Vehicle" Role="Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleType">
+        <PropertyRef Name="VehicleTypeID" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="VehicleTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VehicleMa__Vehic__151B244E">
+    <End Type="SiyayaTravelAssistModel.Vehicle" Role="Vehicle" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.VehicleMaintenance" Role="VehicleMaintenance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="VehicleID" />
+      </Principal>
+      <Dependent Role="VehicleMaintenance">
+        <PropertyRef Name="VehicleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VehicleBr__Vehic__74AE54BC">
+    <End Type="SiyayaTravelAssistModel.VehicleModelType" Role="VehicleModelType" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.VehicleBrandType" Role="VehicleBrandType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleModelType">
+        <PropertyRef Name="VehicleModelTypeID" />
+      </Principal>
+      <Dependent Role="VehicleBrandType">
+        <PropertyRef Name="VehicleModelTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__CityID__52593CB8">
+    <End Type="SiyayaTravelAssistModel.City" Role="City" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__Gender__534D60F1">
+    <End Type="SiyayaTravelAssistModel.Gender" Role="Gender" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="GenderID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Trip__QuoteID__0A9D95DB">
+    <End Type="SiyayaTravelAssistModel.Quote" Role="Quote" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Trip" Role="Trip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="Trip">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="ReportID" />
+    </Key>
+    <Property Name="ReportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuoteID" Type="Int32" />
+    <NavigationProperty Name="Quote" Relationship="SiyayaTravelAssistModel.FK__Report__QuoteID__160F4887" FromRole="Report" ToRole="Quote" />
+  </EntityType>
+  <Association Name="FK__Report__QuoteID__160F4887">
+    <End Type="SiyayaTravelAssistModel.Quote" Role="Quote" Multiplicity="0..1" />
+    <End Type="SiyayaTravelAssistModel.Report" Role="Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

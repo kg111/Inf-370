@@ -1,0 +1,34 @@
+﻿@model SiyayaTravelAssist.Models.VehicleBrandType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VehicleBrandType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleBrandTypeDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleBrandTypeDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleModelType.VehicleModelTypeDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleModelType.VehicleModelTypeDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VehicleBrandTypeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,66 @@
+﻿@model SiyayaTravelAssist.Models.Vehicle
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vehicle</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleLicenseNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleLicenseNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OutsourceVehicleGroupCompany.OutsourceVehicleGroupCompaniesDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OutsourceVehicleGroupCompany.OutsourceVehicleGroupCompaniesDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleBrandType.VehicleBrandTypeDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleBrandType.VehicleBrandTypeDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleColor.VehicleColorDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleColor.VehicleColorDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleGroup.VehicleGroupDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleGroup.VehicleGroupDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleType.VehicleTypeDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleType.VehicleTypeDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VehicleID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
